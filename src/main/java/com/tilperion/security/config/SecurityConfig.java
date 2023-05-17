@@ -36,7 +36,7 @@ public class SecurityConfig {
         httpSecurity.authorizeHttpRequests()
                 .requestMatchers("/demo").authenticated()
                 .requestMatchers("/public").permitAll()
-                .requestMatchers("/users/").hasAuthority("admin")
+                .requestMatchers("/users/").hasRole("admin")
                 .requestMatchers("/users/add").permitAll()
                 .anyRequest().authenticated();
 
