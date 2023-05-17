@@ -56,15 +56,15 @@ public class SecurityConfig {
         return httpSecurity.build();
     }
 
-    @Bean
-    public UserDetailsManager userDetailsManager() {
-        UserDetails user1 = User.withUsername("admin")
-                .password(passwordEncoder().encode("admin"))
-                .authorities("read")
-                .build();
-
-        return new InMemoryUserDetailsManager(user1);
-    }
+//    @Bean
+//    public UserDetailsManager userDetailsManager() {
+//        UserDetails user1 = User.withUsername("admin")
+//                .password(passwordEncoder().encode("admin"))
+//                .authorities("read")
+//                .build();
+//
+//        return new InMemoryUserDetailsManager(user1);
+//    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
