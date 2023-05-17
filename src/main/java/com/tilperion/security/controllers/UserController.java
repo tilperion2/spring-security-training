@@ -6,6 +6,7 @@ import com.tilperion.security.model.User;
 import com.tilperion.security.repo.UserRepository;
 import com.tilperion.security.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +26,11 @@ public class UserController {
     @GetMapping("/{username}")
     public UserDto getUserByUsername(@PathVariable String username) {
         return userService.getUserByName(username);
+    }
+
+    @GetMapping("/current")
+    public Authentication getUserByUsername(Authentication auth) {
+        return auth;
     }
 
     @PostMapping("/add")
