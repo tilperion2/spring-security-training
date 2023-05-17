@@ -3,6 +3,7 @@ package com.tilperion.security.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,6 +17,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import java.net.http.HttpClient;
 
 @Configuration
+@EnableMethodSecurity
 public class SecurityConfig {
 
     @Value("${cors.methods}")

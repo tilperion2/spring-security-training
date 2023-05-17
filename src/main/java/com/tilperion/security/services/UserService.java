@@ -1,6 +1,7 @@
 package com.tilperion.security.services;
 
 import com.tilperion.security.dto.CreateUserDto;
+import com.tilperion.security.dto.UpdateUserDto;
 import com.tilperion.security.dto.UserDto;
 import com.tilperion.security.model.Authority;
 import com.tilperion.security.model.User;
@@ -42,5 +43,9 @@ public class UserService {
         user.setAuthorities(authorities);
 
         return UserDto.fromEntity(userRepository.save(user));
+    }
+
+    public UserDto updateUser(UpdateUserDto updateUserDto) {
+        return null;
     }
 }
